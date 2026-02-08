@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -15,16 +16,19 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
     <script type="importmap">
-    {
-      "imports": {
-        "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
-      }
-    }
-    </script>
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "recharts": "https://esm.sh/recharts@^3.7.0"
+  }
+}
+</script>
 
     <style>
         body { font-family: 'Inter', sans-serif; }
-        /* Style tambahan kamu tetap ada di sini */
         .markdown-content h1 { font-size: 1.5rem; font-weight: bold; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.4rem; }
         .markdown-content h2 { font-size: 1.25rem; font-weight: bold; margin-top: 1.25rem; margin-bottom: 0.5rem; color: #1f2937; }
         .markdown-content p { margin-bottom: 0.75rem; line-height: 1.6; text-align: justify; color: #374151; }
@@ -36,6 +40,7 @@
 <body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
 
-    <script type="text/babel" data-type="module" src="./app.js"></script>
+    <!-- Diubah dari app.js menjadi main.js agar sesuai dengan file entry point -->
+    <script type="text/babel" data-type="module" src="./main.js"></script>
 </body>
 </html>
