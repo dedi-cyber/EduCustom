@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduCustom - Personalized Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <!-- html2pdf library for real PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        
+        /* Markdown rendering styles */
+        .markdown-content h1 { font-size: 1.5rem; font-weight: bold; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.4rem; }
+        .markdown-content h2 { font-size: 1.25rem; font-weight: bold; margin-top: 1.25rem; margin-bottom: 0.5rem; color: #1f2937; }
+        .markdown-content h3 { font-size: 1.1rem; font-weight: bold; margin-top: 1rem; margin-bottom: 0.25rem; color: #374151; }
+        .markdown-content p { margin-bottom: 0.75rem; line-height: 1.6; text-align: justify; color: #374151; }
+        .markdown-content ul { list-style-type: disc; margin-left: 1.25rem; margin-bottom: 0.75rem; }
+        .markdown-content ol { list-style-type: decimal; margin-left: 1.25rem; margin-bottom: 0.75rem; }
+        .markdown-content li { margin-bottom: 0.35rem; color: #374151; }
+        .markdown-content strong { color: #111827; font-weight: 700; }
+
+        /* Document Preview (A4 Mockup) */
+        .a4-container {
+            background-color: white;
+            width: 100%;
+            max-width: 210mm;
+            min-height: 297mm;
+            padding: 15mm 20mm;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            font-family: 'Lora', serif;
+            color: #111827;
+        }
+
+        @media print {
+            body { background: white !important; margin: 0; padding: 0; }
+            header, footer, .no-print, nav, .sidebar-info { display: none !important; }
+            .a4-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                width: 100% !important;
+                max-width: none !important;
+                padding: 0 !important;
+            }
+            @page {
+                size: A4;
+                margin: 15mm;
+            }
+            .markdown-content { font-size: 11pt; }
+        }
+
+        /* Loading animation for PDF generation */
+        .generating-pdf {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0"
+  }
+}
+</script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <div id="root"></div>
+</body>
+</html>
